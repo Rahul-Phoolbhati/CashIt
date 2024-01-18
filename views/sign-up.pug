@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width", initial-scale=1.0>
+        <title>sign in /sign up form </title>
+        <link rel="stylesheet" href="/sign-up.css">
+        <script src="https://kit.fontawesome.com/711b3c5821.js" crossorigin="anonymous"></script>
+        
+    </head>
+    <body>
+    <div class="container">
+    <div class="form-box">
+        <h1 id="tittle">Sign up</h1>
+       
+        <form action="/api/v1/register" method="POST">
+        <div class="input group">
+            <div class="input-field" id="name">
+                <i class="fa-solid fa-user"></i>
+                <input type="text" name="name" placeholder="Your name" required>
+            </div>
+            <div class="input-field">
+                <i class="fa-solid fa-at"></i>
+                <input type="email" name="username" placeholder="Your email id" required>
+            </div>
+            <div class="input-field">
+                <i class="fa-solid fa-phone"></i>
+                <input type="tel" name="phone" id="phone" placeholder="0123456789" pattern="[0-9]{10}">
+            </div>
+            <div class="input-field">
+                <i class="fa-solid fa-lock"></i>
+                <input type="password" name="password" placeholder="Your password" required>
+            </div>
+            <p>forgot password<a href="@">click here!</a></p>
+            <div class="button">
+                <button type="submit" id="signup" class="disable">sign up</button>
+                 <button type="button"  id="signin" > <a href="log-in">Log in</a></button>
+
+            </div>
+        </div>
+        </form>
+    </div>
+
+    </div>
+    script(src="/sign-up.js") 
+            
+
+    </body>
+</html>
+
+            

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width", initial-scale=1.0>
+        <title>sign in /sign up form </title>
+        <link rel="stylesheet" href="/sign-up.css">
+        <script src="https://kit.fontawesome.com/711b3c5821.js" crossorigin="anonymous"></script>
+        
+    </head>
+    <body>
+    <div class="container">
+    <div class="form-box">
+        <h1 id="tittle">Log-in</h1>
+       
+        <form action="/api/v1/log-in" method="POST">
+        <div class="input group">
+        
+        <div class="input-field">
+            <i class="fa-solid fa-at"></i>
+            <input type="email" name="username" placeholder="Your email id" required>
+        </div>
+        <div class="input-field">
+            <i class="fa-solid fa-lock"></i>
+            <input type="password" name="password" placeholder="Your password" required>
+        </div>
+        <p>forgot password<a href="@">click here!</a></p>
+        <div class="button">
+            <button type="submit"  id="signin" class="disable">Log in</button>
+            <button type="button" id="signup"> <a href="register">sign up</a></button>
+        </div>
+        </div>
+    </form>
+    </div>
+
+    </div>
+    script(src="/sign-up.js") 
+            
+
+    </body>
+</html>

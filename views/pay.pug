@@ -1,0 +1,38 @@
+html(lang="en")
+  head
+    title Razorpay User-to-User Payment
+    link(rel="stylesheet" href="/pay.css")
+  body
+    div.container
+      h1 Razorpay User-to-User Payment
+
+      div#profile
+        h2 User's Profile
+        p Name: #{recipientInfo.name}
+          p Mobile number: #{recipientInfo.mobileNumber}
+
+
+        div#amountInput
+          label(for="amount") Enter Amount :  
+            input(type="number" id="amount" placeholder="Enter amount")
+            button#payButton Pay
+
+        div#paymentLink
+
+    //- Define a global JavaScript variable to hold recipientInfo
+    script.
+      var recipientInfo = #{JSON.stringify(recipientInfo)};
+
+
+      //- Pass recipientInfo to your JavaScript module
+    script(data-recipient-info=JSON.stringify(recipientInfo))
+
+      //- Include your custom JavaScript module (pay.js)
+    script(type="module" src="/pay.js")
+
+
+    //- Include Razorpay script
+    script(src="https://checkout.razorpay.com/v1/checkout.js")
+
+    //- Include your custom JavaScript file
+    script(src="/pay.js")

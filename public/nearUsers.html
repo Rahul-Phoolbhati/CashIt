@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>NearBy Users</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f2f2f2; /* Light grey background color */
+            color: #333; /* Dark grey text color */
+            position: relative; /* Set body to a relative position */
+            
+        }
+
+        .container {
+            max-width: 400px; /* Narrower container */
+            margin: 0 auto;
+            padding: 60px 20px; /* Increase top and bottom padding for a taller container */
+            background-color: #fff; /* White background */
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            border: 2px solid #ccc; /* Grey border */
+            display: flex; /* Use flexbox to center content vertically and horizontally */
+            flex-direction: column; /* Stack children vertically */
+            align-items: center; /* Center items horizontally */
+            /* justify-content: center; Center items vertically */
+            position: relative; /* Set container to a relative position */
+            
+            min-height: 100vh;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0; /* Remove margin to eliminate the gap between list items */
+        }
+
+        li {
+            background-color: #f5f5f5; /* Light grey background for list items */
+            border: 2px solid #ddd; /* Grey border */
+            border-radius: 5px;
+            padding: 10px;
+            display: flex;
+            align-items: center;
+            transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            margin-bottom: 5px; /* Add a small margin between list items */
+        }
+
+        li:hover {
+            background-color: #ddd; /* Slightly darker grey on hover */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        strong {
+            font-weight: bold;
+            margin-right: 20px;
+        }
+
+        .message-icon {
+            font-size: 18px;
+            margin-left: auto;
+            cursor: pointer;
+            color: #007BFF; /* Google Pay blue color */
+            transition: color 0.2s ease-in-out;
+        }
+
+        .message-icon:hover {
+            color: #0056b3; /* Darker blue on hover */
+        }
+
+        a {
+            text-decoration: none;
+            color: #007BFF; /* Google Pay blue color */
+            margin-left: 5px;
+        }
+
+        .pay-icon {
+            /* width: 48px;
+            height: 48px; */
+            margin-bottom: 20px; /* Add margin to move it away from the list */
+            /* border-radius: 50%; */
+            /* background-color: #333; */
+        }
+
+        .profile-icon {
+            width: 24px;
+            height: 24px;
+            margin-right: 10px;
+            border-radius: 50%; /* Make it a circle */
+            background-color: #333;
+        }
+
+        .emoji {
+            position: absolute; /* Set emoji position to absolute */
+            font-size: 24px;
+        }
+
+        .back-emoji {
+            top: 10px; /* Adjust top position for proper placement */
+            left: 10px; /* Left-top corner */
+        }
+
+        .cross-emoji {
+            top: 10px; /* Adjust top position for proper placement */
+            right: 10px; /* Right-top corner */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Back emoji -->
+        <div class="emoji back-emoji">&#9664;&#65039;</div>
+        
+        <!-- Add the Logo  -->
+        <!-- <img   class="google-pay-icon">  -->
+        <h2 class="pay-icon">Ca$hIt</h2>
+        
+        <!-- Replace this JavaScript array of objects with your own data -->
+        
+
+        <ul id="userList">
+            
+        </ul>
+
+        <!-- Cross emoji -->
+        <div class="emoji cross-emoji">&#10060;</div>
+    </div>
+</body>
+<script src="nearUser.js"></script>
+</html>
+
+

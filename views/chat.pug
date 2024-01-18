@@ -1,0 +1,21 @@
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    link(rel="stylesheet" href="/chat.css")
+    title Chat
+  body
+    .app
+      .form
+      .screen.chat-screen.active
+        .header
+          .logo ChatRoom
+          button#payButton
+            a#payButton(href=`/api/v1/pay/${userId}` style="color:white;text-decoration:none;padding:8px 20px 8px 20px") Pay
+        .messages
+        .typebox
+          input(type="text" id="message-input")
+          button#send-message Send
+
+    script(defer src="http://localhost:8000/socket.io/socket.io.js")
+    script(defer src="/chat2.js")
