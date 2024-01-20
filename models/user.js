@@ -16,6 +16,10 @@ const userShema = {
     },
     lon:{
         type:String,
+    },
+    amount: {
+        type: Number,
+        default: 0,
     }
 }
 

@@ -5,11 +5,12 @@ html(lang="en")
     link(rel="stylesheet" href="/chat.css")
     title Chat
   body
+    
     .app
       .form
       .screen.chat-screen.active
         .header
-          .logo ChatRoom
+          .logo ChatRoom                              
           button#payButton
             a#payButton(href=`/api/v1/pay/${userId}` style="color:white;text-decoration:none;padding:8px 20px 8px 20px") Pay
         .messages
@@ -17,5 +18,5 @@ html(lang="en")
           input(type="text" id="message-input")
           button#send-message Send
 
-    script(defer src="http://localhost:8000/socket.io/socket.io.js")
-    script(defer src="/chat2.js")
+    script(defer src="http://localhost:3000/socket.io/socket.io.js")
+    script( defer src="/chati.js")

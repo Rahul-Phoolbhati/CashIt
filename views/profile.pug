@@ -1,0 +1,43 @@
+html
+  head
+    title My Profile
+    link(rel='stylesheet', href='/profile.css')
+  body
+    h1 Profile 
+    .profile-container
+      .profile-details
+        div 
+            img( )
+        .info 
+            h1= user.name
+            p
+              strong Mobile: 
+              | #{user.mob}
+            p
+              strong Email: 
+              | #{user.email}
+      .account
+        .account-details
+          h2 Account Details
+          p Amount in Account: #{user.amount}
+
+        .btns
+            .redeem-button
+              button(type='button') Redeem
+            .redeem-button
+              button(type='button') Donate
+        
+      .messages
+          h1 Messages
+
+          ul 
+            li
+                img() 
+                a(href="#") John kill
+            li
+                img()  
+                a(href="#") Meera singh 
+            li 
+                img() 
+                a(href="#") know singh 
+

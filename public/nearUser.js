@@ -31,7 +31,7 @@ function displayNearbyUsers(nearbyUsers,userLatitude,userLongitude){
     userListDiv.innerHTML = "<h2>Nearby Users:</h2>";
     if (nearbyUsers.length > 0) {
       nearbyUsers.forEach(function(user) {
-        userListDiv.innerHTML += `<li><img   class='profile-icon'><strong>${user.name}:</strong>  <strong>Distance:</strong> ${(calculateDistance(userLatitude, userLongitude, user.lat, user.lon)/10).toFixed(5)} m<a href='/api/v1/chat/${user._id}' ><span class='message-icon'>&#128172;</span></a></li>`
+        userListDiv.innerHTML += `<li><img   class='profile-icon'><strong>${user.name}:</strong> <strong>Distance:</strong>${(calculateDistance(userLatitude, userLongitude, user.lat, user.lon)/10).toFixed(2)} m<a href='/api/v1/chat/${user._id}' ><span class='message-icon'>&#128172;</span></a></li>`
         // user.name + " - Distance: " + calculateDistance(userLatitude, userLongitude, user.lat, user.lon).toFixed(5) + " m<br>";
       });
     } else {
@@ -57,7 +57,8 @@ function degToRad(degrees) {
 
 
   // Update location every 10 seconds
-setInterval(updateLocation, 10000);
+// setInterval(updateLocation, 10000);
+updateLocation();
 
 
 function updateLocationInDb() {

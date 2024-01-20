@@ -18,5 +18,17 @@ const userPayGet = async (req,res)=>{
     res.render('pay', { recipientInfo });
 }
 
+// updatte amount in users database
+const userPayPut = async (req,res)=>{
+    const { amount } = req.body;
+//    console.log(amount); 
+    const user =  await User.findById(req.params.id);
+    if(user){
+        user.amount = user.amount + amount;
+        user.save();
+    }
+    res.status(200).json(user);
+}
 
-module.exports = { userChatGet, userPayGet }
+
+module.exports = { userChatGet, userPayGet , userPayPut }

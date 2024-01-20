@@ -11,7 +11,7 @@ const userChatRoutes = require('./routes/userChatRoutes')
 const userPayRoutes = require('./routes/userPayRoutes')
 const User = require('./models/user')
 const cors = require('cors');
-
+const profileRoutes = require('./routes/profile')
 
 
 const app = express();
@@ -86,9 +86,11 @@ app.get('/',(req,res)=>{
 
 
 app.use('/api/v1/nearby-users',isAuthenticated,nearuser);
+
 app.use('/api/v1/update-location',isAuthenticated,updateloc);
 app.use('/api/v1/chat',userChatRoutes);
 app.use('/api/v1/pay',userPayRoutes);
+app.use('/api/v1/profile',isAuthenticated,profileRoutes);
 
 app.get('/api/v1/register', (req,res)=>{
     res.render('sign-up');
@@ -118,13 +120,18 @@ app.get('/api/v1/nearUsers',isAuthenticated,(req,res)=>{
   res.redirect('/nearUsers.html');
 });
 
+app.get('/api/v1/nearPlaces',isAuthenticated,(req,res)=>{
+  res.redirect('/nearPlaces.html');
+});
+
+
 app.get('/api/v1/log-in', (req,res)=>{
     res.render('log-in');
 });
 app.post(
     "/api/v1/log-in",
     passport.authenticate("local", {
-      successRedirect: "/api/v1/nearUsers",
+      successRedirect: "/api/v1/nearUsers", // nearuser.html
       failureRedirect: "/api/v1/log-in"
     })
 );
@@ -134,6 +141,10 @@ app.get("/api/v1/log-out", (req, res, next) => {
       if (err) {
         return next(err);
       }
+      res.cookie('userId', '', {
+        sameSite: 'None',
+        secure: true // Ensure HTTPS for 'SameSite=None'
+    });
       res.redirect("/");
     });
 });

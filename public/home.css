@@ -14,16 +14,19 @@
 .navbar{
     width: auto;
     margin:0;
-    padding: 10px;
+    padding: 15px;
     display: flex;
     align-items: center;
     justify-content:space-between;
     /* background-color: gray; */
+    /* border-bottom: 2px solid green; */
+    
 }
+
 .logo
 { width: 150px;
     cursor: pointer;
-    padding-left: 30%
+    padding-left: 10%
 }
 p1
 { color: white;
@@ -37,7 +40,8 @@ p1
 .navbar ul li{
     list-style: none;
     display: inline-block;
-    margin: 0 20px;
+    font-family: 'Times New Roman', Times, serif;
+    margin: 0 10px;
 }
 .navbar ul li a{
     text-decoration: none;
