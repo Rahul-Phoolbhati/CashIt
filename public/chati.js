@@ -1,6 +1,7 @@
 // const { io } = require("socket.io-client");
 
-const socket = io("http://localhost:3000");
+const socket = io();
+// process.env.SocketIo_URL || "http://localhost:3000"
 
 
 const messageInput = document.getElementById("message-input");
