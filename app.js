@@ -131,7 +131,7 @@ app.get('/api/v1/log-in', (req,res)=>{
 app.post(
     "/api/v1/log-in",
     passport.authenticate("local", {
-      successRedirect: "/api/v1/nearUsers", // nearuser.html
+      successRedirect: "/", // nearuser.html
       failureRedirect: "/api/v1/log-in"
     })
 );
